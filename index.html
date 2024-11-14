@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Design Web Page</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2E4053;
+            color: #F7F9F9;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1C2833, #5D6D7E);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #34495E;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #F7F9F9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #AED6F1;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('image/b7.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #F2F3F4;
+            color: #2C3E50;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Scroll-to-top button */
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #34495E;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        #scrollToTop:hover {
+            background-color: #5D6D7E;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Unique Web Page</h1>
+        <p>Crafted with care and creativity</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Inspiring Hero Section</h2>
+        <p>Beautiful backgrounds make all the difference</p>
+    </section>
+
+    <section class="content">
+        <h3>About Our Page</h3>
+        <p>Discover our amazing content and design choices below.</p>
+        
+        <div class="gallery">
+            <img src="image/b3.jpg" alt="Description of the first image" onclick="openModal(this)">
+            <img src="image/b4.jpg" alt="Description of the second image" onclick="openModal(this)">
+            <img src="image/b5.jpg" alt="Description of the third image" onclick="openModal(this)">
+            <img src="image/b6.jpg" alt="Description of the fourth image" onclick="openModal(this)">
+        </div>
+    </section>
+
+    <!-- Modal for Enlarged Image -->
+    <div class="modal" id="imageModal">
+        <img id="modalImage" alt="Enlarged Image">
+    </div>
+
+    <footer>
+        <p>© 2024 Unique Web Page. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" onclick="scrollToTop()">↑ Top</button>
+
+    <script>
+        // Scroll-to-top functionality
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Open the modal and display the clicked image
+        function openModal(image) {
+            modal.style.display = "flex";
+            modalImage.src = image.src;
+        }
+
+        // Close the modal when clicked
+        modal.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
