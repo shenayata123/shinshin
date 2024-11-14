@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* General Body and Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: url('https://via.placeholder.com/1200x400/333/fff?text=Our+Company') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            background-size: cover;
+            background-position: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.5rem;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            text-align: center;
+            background-color: #444;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px;
+            margin: 0 15%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Team Section Styling */
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            width: 100%;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>About Us</h1>
+    <p>Learn more about our company and mission</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <h2>Our Company</h2>
+    <p>We are a company committed to delivering high-quality services. Our goal is to provide our clients with innovative solutions that improve their businesses and lives.</p>
+
+    <h3>Our Mission</h3>
+    <p>To empower businesses by offering cutting-edge solutions that drive innovation and efficiency.</p>
+
+    <h3>Our Vision</h3>
+    <p>To be the leading provider of tailored digital solutions that transform industries.</p>
+
+    <h3>Our Team</h3>
+    <div class="team-section">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="image/Agatsuma.jfif" alt="Team Member 1">
+            <h4>Zenitsu Agatsuma</h4>
+            <p>CEO & Founder</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="image/zenitsu.jfif" alt="Team Member 2">
+            <h4>Tanjiro Kamado</h4>
+            <p>Lead Developer</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <img src="image/Zen.jfif" alt="Team Member 3">
+            <h4>Mitsume Kanjori</h4>
+            <p>Creative Director</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <img src="image/nitsu.avif" alt="Team Member 4">
+            <h4>Shinubo Kocho</h4>
+            <p>Marketing Specialist</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Our Company. All rights reserved.</p>
+    <div>
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a> |
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+</footer>
+
+</body>
+</html>
